@@ -2,6 +2,8 @@ function setLimit() {
   let form = FormApp.getActiveForm();
   if (countEntries() >= getLimit()) {
     form.setAcceptingResponses(false);
+  } else {
+    form.setAcceptingResponses(true);
   }
   setDescription();
 }
