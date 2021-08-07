@@ -9,7 +9,7 @@ function setLimit() {
 }
 
 function getLimit() {
-  return 8; //ここに人数の上限値を設定
+  return 10; //ここに人数の上限値を設定
 }
 
 function setDescription() {
