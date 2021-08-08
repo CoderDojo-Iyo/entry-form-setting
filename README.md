@@ -8,9 +8,7 @@ function getLimit() {
 }
 ```
 
-定員を変更する場合はGoogleフォームのスクリプトエディタで上の部分を編集してください。
-
-その際に、満席で受付停止になっている場合はフォームの設定で受付可能に切り替えてください。
+定員を変更する場合はGoogleフォームのスクリプトエディタで上の部分を編集して上書き保存してください。
 
 ## リビジョン管理
 `Google Apps Script GitHub Assistant`
@@ -24,4 +22,4 @@ function getLimit() {
 ## Trigger 2
 - Deployment: Head
 - Event: From form - On open
-- Function: setDescription
+- Function: setLimit
