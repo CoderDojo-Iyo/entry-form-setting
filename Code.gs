@@ -9,7 +9,7 @@ function setLimit() {
 }
 
 function getLimit() {
-  return 8; //ここに人数の上限値を設定
+  return 10; //ここに人数の上限値を設定
 }
 
 function setDescription() {
@@ -25,12 +25,34 @@ function countEntries() {
   for (let i = 0; i < responses.length; i++) {
     let resp = responses[i];
     let items = resp.getItemResponses();
-    for (var j = 0; j < items.length; j++) {
-      let item = items[j];
-      if (item.getItem().getTitle() === "参加人数") {
-        entries = entries + parseInt(item.getResponse());
-      }
+    if (checkCancel(items)) {
+      continue;
+    }
+    entries += getEntries(items);
+  }
+  return entries;
+}
+
+function getEntries(items) {
+  let entries = 0;
+  for (var i = 0; i < items.length; i++) {
+    let item = items[i];
+    if (item.getItem().getTitle() === "参加人数") {
+      entries = parseInt(item.getResponse());
+      break;
     }
   }
   return entries;
+}
+
+function checkCancel(items) {
+  for (var i = 0; i < items.length; i++) {
+    let item = items[i];
+    if (item.getItem().getTitle().indexOf("参加区分") >= 0) {
+      if (item.getResponse() === "参加のキャンセル") {
+        return true;
+      }
+    }
+  }
+  return false;
 }
