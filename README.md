@@ -26,3 +26,9 @@ function getLimit() {
 - Deployment: Head
 - Event: From form - On open
 - Function: setLimit
+
+## お名前の入力 2023.12.25
+CoderDojo伊予参加フォーム(1.3)より
+- お名前の入力を１箇所に集約
+- やりたいことの選択肢を追加
+- 持ち込む機器の選択肢を追加
